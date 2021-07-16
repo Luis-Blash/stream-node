@@ -1,1 +1,1 @@
-console.log("Hola");
+const socket = io();
