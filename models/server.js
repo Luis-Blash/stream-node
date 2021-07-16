@@ -11,6 +11,8 @@ class Server {
 
         // Rutas
         this.pathRoute = {
+            emit: '/emicion',
+            client: '/cliente'
         }
         //middlewares
         this.middlewares()
@@ -28,12 +30,17 @@ class Server {
     }
 
     routes() {
-        // this.app.use(this.pathRoute.home, require('../routes/home'))
+        this.app.use(this.pathRoute.client, require('../routes/cliente'))
     }
 
     sockets(){
         this.io.on('connection', socket => {
             console.log('Cliente conectado', socket.id);
+
+            socket.on('stream',(imagen)=>{
+                // emitir el evento a los sockets 
+                socket.broadcast.emit('stream',imagen)
+            })
 
             socket.on('disconnect', ()=>{
                 console.log('Cliente desconectado');
