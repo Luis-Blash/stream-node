@@ -1,6 +1,4 @@
 // JavaScript para canvas
-const lblOnline = document.querySelector('#lblOnline')
-const lblOffline = document.querySelector('#lblOffline')
 const canvas = document.querySelector('#preview');
 const context = canvas.getContext('2d');
 const btn =  document.querySelector('#emitir');
@@ -28,6 +26,11 @@ function errorCamara() {
     mensajeCamara('Camara ha Fallado')
 }
 
+// Fernando
+const lblOnline = document.querySelector('#lblOnline')
+const lblOffline = document.querySelector('#lblOffline')
+
+
 // Socket
 const socket = io();
 
@@ -50,14 +53,13 @@ btn.addEventListener('click', () =>{
 })
 
 socket.on('connect', ()=>{
-    console.log('Conectado');
+    // console.log('Conectado');
     lblOffline.style.display = 'none'
     lblOnline.style.display = ''
-    // Datos
 })
 
 socket.on('disconnect', ()=>{
-    console.log('Desconectado');
+    // console.log('Desconectado');
     lblOffline.style.display = ''
     lblOnline.style.display = 'none'
 })
