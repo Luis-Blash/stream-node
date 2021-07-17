@@ -1,0 +1,30 @@
+#video{
+    height: 388px;
+    width: 500px; 
+}
+.conferencia{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 10px;
+}
+.chat{
+    border: #ccc solid;
+    border-radius: 25px;
+    height: 388px;
+    padding: 15px;
+    overflow-y: scroll;
+    width: 500px;
+}
+
+p{
+    margin: 0;
+    padding: 0;
+}
+
+.emisor{
+    color: #FF9226;
+}
+
+.receptor{
+    color: #0087B0;
+}

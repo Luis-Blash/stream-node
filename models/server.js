@@ -13,8 +13,7 @@ class Server {
 
         // Rutas
         this.pathRoute = {
-            emit: '/emicion',
-            client: '/cliente'
+            client: '/'
         }
         //middlewares
         this.middlewares()

@@ -13,12 +13,12 @@ const socketController = (socket) => {
     })
 
     // mensaje
-    socket.on('enviar-mensaje', (payload, callback) =>{
+    socket.on('enviar-mensaje', (payload) =>{
         // this.io.emit = a todos y a el mismo.
         // Se lo a todos menos a el
         socket.broadcast.emit('enviar-mensaje', payload)
-        const id = '123'
-        callback(id);
+        // const id = '123'
+        // callback(id);
 
     })
 }
